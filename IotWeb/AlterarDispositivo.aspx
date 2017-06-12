@@ -3,6 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
+        <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Alterar Dispositivo <br />
+            <small>Página para alteração de dispositivo</small>
+        </h1>
     <h5><asp:Label ID="LabelResultadoMsg" runat="server" Text=""></asp:Label></h5>
     <div class="form-group">
         <asp:Label ID="Label2" runat="server" Text="Label">Id:</asp:Label>

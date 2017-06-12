@@ -2,11 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Sensores <br />
+            <small>Listagem de Sensores</small>
+        </h1>
     <asp:ListView ID="ListViewSensores" runat="server" DataKeyNames="Id">
         <AlternatingItemTemplate>
             <tr style="background-color:#FFF8DC;">
                 <td>
-                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' /></a>
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
@@ -23,7 +28,7 @@
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                 </td>
                 <td>
-                    <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' /></a>
                 </td>
                 <td>
                     <asp:TextBox ID="NomeTextBox" runat="server" Text='<%# Bind("Nome") %>' />
@@ -58,7 +63,7 @@
         <ItemTemplate>
             <tr style="background-color:#DCDCDC;color: #000000;">
                 <td>
-                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' /></a>
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
@@ -97,7 +102,7 @@
         <SelectedItemTemplate>
             <tr style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">
                 <td>
-                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />

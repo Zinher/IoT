@@ -10,7 +10,7 @@
 namespace IoTWeb {
     
     
-    public partial class DetalheDispositivo {
+    public partial class ProgramarDispositivo {
         
         /// <summary>
         /// LabelResultadoMsg control.
@@ -58,6 +58,15 @@ namespace IoTWeb {
         protected global::System.Web.UI.WebControls.TextBox TextNome;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// tipoLabel control.
         /// </summary>
         /// <remarks>
@@ -76,76 +85,58 @@ namespace IoTWeb {
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonTipo;
         
         /// <summary>
-        /// labelValorAtual control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelValorAtual;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// labelValorAtualLigado control.
+        /// TextLigarHora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelValorAtualLigado;
+        protected global::System.Web.UI.WebControls.TextBox TextLigarHora;
         
         /// <summary>
-        /// labelValorAtualDesligado control.
+        /// TextLigarMinuto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelValorAtualDesligado;
+        protected global::System.Web.UI.WebControls.TextBox TextLigarMinuto;
         
         /// <summary>
-        /// DivControleAtuador control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivControleAtuador;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// ButtonLigar control.
+        /// TextDesligarHora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLigar;
+        protected global::System.Web.UI.WebControls.TextBox TextDesligarHora;
         
         /// <summary>
-        /// ButtonDesligar control.
+        /// TextDesligarMinuto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDesligar;
-        
-        /// <summary>
-        /// ButtonAlterar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAlterar;
-        
-        /// <summary>
-        /// ButtonHistorico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonHistorico;
+        protected global::System.Web.UI.WebControls.TextBox TextDesligarMinuto;
         
         /// <summary>
         /// ButtonProgramar control.

@@ -39,7 +39,7 @@ namespace IoTWeb
 				{
 					LabelResultadoMsg.Text = (string)Session["msg"];
 					Session["msg"] = "";
-					Dispositivo dispositivo = dispositivoService.obter(id);
+                    Dispositivo dispositivo = dispositivoService.obter(id);
 					TextId.Text = "" + dispositivo.Id;
 					TextNome.Text = dispositivo.Nome;
 					RadioButtonTipo.SelectedValue = dispositivo.Tipo.ToString();

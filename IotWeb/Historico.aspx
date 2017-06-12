@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Histórico <br />
+        </h1>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTDataModel %>" SelectCommand="HistoricoUltimos30Dias" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:SessionParameter Name="id" SessionField="Id" Type="Int32" />

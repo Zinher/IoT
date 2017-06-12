@@ -5,6 +5,11 @@
 
 <asp:Content runat="server" ID="content" ContentPlaceHolderId="ContentPlaceHolder1">
     <div class="container">
+        <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Detalhes do dispositivo <br />
+            <small>Página de exibição de detalhes</small>
+        </h1>
         <h5><asp:Label ID="LabelResultadoMsg" runat="server" Text="Label"></asp:Label></h5>
         <div class="form-group">
             <asp:Label ID="Label2" runat="server" Text="Label">Id:</asp:Label>
@@ -36,5 +41,6 @@
         </div>
         <asp:Button ID="ButtonAlterar" runat="server" Text="Alterar" OnClick="ButtonAlterar_Click" CssClass="btn btn-primary marginLeft" />
         <asp:Button ID="ButtonHistorico" runat="server" Text="Histórico" OnClick="ButtonHistorico_Click" CssClass="btn btn-primary marginLeft" />
+        <asp:Button ID="ButtonProgramar" runat="server" Text="Programar" OnClick="ButtonProgramar_Click" CssClass="btn btn-primary marginLeft" />
     </div>
 </asp:Content>

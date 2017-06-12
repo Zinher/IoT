@@ -2,6 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Atuadores <br />
+            <small>Listagem de Atuadores</small>
+        </h1>
     <asp:ListView ID="ListViewSensores" runat="server"
         ItemPlaceholderID="itemPlaceHolder1"
         OnPagePropertiesChanging="ListViewSensores_PagePropertiesChanging"

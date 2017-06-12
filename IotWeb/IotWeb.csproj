@@ -80,6 +80,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Historico.aspx" />
     <Content Include="packages.config" />
+    <Content Include="ProgramarDispositivo.aspx" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Sensores.aspx" />
     <Content Include="Site.Master" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="IncluirDispositivo.aspx.designer.cs">
       <DependentUpon>IncluirDispositivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramarDispositivo.aspx.cs">
+      <DependentUpon>ProgramarDispositivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProgramarDispositivo.aspx.designer.cs">
+      <DependentUpon>ProgramarDispositivo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensores.aspx.cs">

@@ -115,5 +115,10 @@ namespace IoTWeb
         {
             Response.Redirect("Historico.aspx");
         }
+
+        protected void ButtonProgramar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProgramarDispositivo.aspx");
+        }
     }
 }

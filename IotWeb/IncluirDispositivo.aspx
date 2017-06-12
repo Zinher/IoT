@@ -5,6 +5,11 @@
 
 <asp:Content runat="server" ID="content" ContentPlaceHolderId="ContentPlaceHolder1">
     <div class="container">
+        <!-- Professor, aqui estou utilizando uma classe do bootstrap, ok? -->
+        <h1 class="text-info">
+            Inclusão de dispositivo <br />
+            <small>Página para inclusão de dispositivo</small>
+        </h1>
     <h5><asp:Label ID="LabelResultadoMsg" runat="server" Text=""></asp:Label></h5>
     <div class="form-group"> 
         <asp:Label ID="Label1" runat="server" Text="Label">Nome:</asp:Label>
