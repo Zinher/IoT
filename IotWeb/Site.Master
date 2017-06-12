@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IoTWeb.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sistema IDIoT</title>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="https://use.fontawesome.com/3ec503b8e6.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/iotStyles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <asp:Menu cssClass="menufont" ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" Orientation="Horizontal" StaticSubMenuIndent="10px">
+            <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#B5C7DE" />
+            <DynamicSelectedStyle BackColor="#507CD1" />
+            <Items>
+                <asp:MenuItem NavigateUrl="~/IncluirDispositivo.aspx" Text="&#x2795; Incluir" ToolTip="Incluir um novo dispositivo" Value="Incluir"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Sensores.aspx" Text="&#x1F50D; Sensores" ToolTip="Ver a lista de sensores cadastrados" Value="Sensores"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Atuadores.aspx" Text="&#x1f4a1; Atuadores" ToolTip="Ver a lista de atuadores cadastrados" Value="Atuadores"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#507CD1" />
+        </asp:Menu>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

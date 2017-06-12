@@ -1,0 +1,18 @@
+﻿.floatRight {
+    float: right;
+}
+.preto {
+    color: black;
+}
+
+.marginLeft {
+    margin-left: 12px;
+}
+.menufont {
+    font-family: emoji;
+    font-size: 2em;
+}
+@font-face {
+  font-family: emoji;
+  src: url('fonts/fontawesome-webfont.woff') format('woff');
+}
