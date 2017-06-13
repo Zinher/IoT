@@ -42,17 +42,18 @@ namespace IoTWeb
                     Dispositivo dispositivo = dispositivoService.obter(id);
                     TextId.Text = "" + dispositivo.Id;
                     TextNome.Text = dispositivo.Nome;
-
-
-                    var resulthora = TimeSpan.FromMinutes((int)dispositivo.AtuadorProgramavel.Ligar);
-                    var ligarHora = (int)resulthora.TotalHours;
-                    TextLigarHora.Text = resulthora.ToString();
-
-                    TextLigarMinuto.Text = Convert.ToString(dispositivo.AtuadorProgramavel.Ligar);
-                    TextDesligarHora.Text = Convert.ToString(dispositivo.AtuadorProgramavel.Desligar);
-                    TextDesligarMinuto.Text = Convert.ToString(dispositivo.AtuadorProgramavel.Desligar);
-
                     RadioButtonTipo.SelectedValue = dispositivo.Tipo.ToString();
+
+                    //Verificar se hora e minuto = null e caso não, carrega os dados no campo já realizando a conversão de horas.
+                    if (dispositivo.AtuadorProgramavel != null)
+                    {
+                        var resulthoraLigar = TimeSpan.FromMinutes((int)dispositivo.AtuadorProgramavel.Ligar);
+                        var resulthoraDesligar = TimeSpan.FromMinutes((int)dispositivo.AtuadorProgramavel.Desligar);
+                        TextLigarHora.Text = resulthoraLigar.Hours.ToString();
+                        TextLigarMinuto.Text = resulthoraLigar.Minutes.ToString();
+                        TextDesligarHora.Text = resulthoraDesligar.Hours.ToString();
+                        TextDesligarMinuto.Text = resulthoraDesligar.Minutes.ToString();
+                    }
                 }
             }
 

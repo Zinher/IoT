@@ -19,6 +19,9 @@
                 <td>
                     <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
                 </td>
+                <td>
+                    <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
+                </td>
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
@@ -35,6 +38,9 @@
                 </td>
                 <td>
                     <asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' />
+                </td>
+                <td>
+                    <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
                 </td>
             </tr>
         </EditItemTemplate>
@@ -58,6 +64,9 @@
                 <td>
                     <asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' />
                 </td>
+                <td>
+                    <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
+                </td>
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
@@ -70,6 +79,9 @@
                 </td>
                 <td>
                     <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
+                </td>
+                <td>
+                    <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
                 </td>
             </tr>
         </ItemTemplate>
@@ -109,6 +121,9 @@
                 </td>
                 <td>
                     <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
+                </td>
+                <td>
+                    <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
                 </td>
             </tr>
         </SelectedItemTemplate>
