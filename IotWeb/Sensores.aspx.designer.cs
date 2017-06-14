@@ -13,15 +13,6 @@ namespace IoTWeb {
     public partial class Sensores {
         
         /// <summary>
-        /// ListViewSensores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewSensores;
-        
-        /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
@@ -31,12 +22,12 @@ namespace IoTWeb {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// lvDataPager1 control.
+        /// ListViewSensores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager lvDataPager1;
+        protected global::System.Web.UI.WebControls.ListView ListViewSensores;
     }
 }

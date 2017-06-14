@@ -7,17 +7,21 @@
             Sensores <br />
             <small>Listagem de Sensores</small>
         </h1>
-    <asp:ListView ID="ListViewSensores" runat="server" DataKeyNames="Id">
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTDB %>" SelectCommand="SELECT [Tipo], [Nome] FROM [Dispositivo] WHERE ([Tipo] = @Tipo)">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="0" Name="Tipo" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+
+    <asp:ListView ID="ListViewSensores" runat="server">
         <AlternatingItemTemplate>
-            <tr style="background-color:#FFF8DC;">
+            <tr style="background-color: #FFFFFF;color: #284775;">
                 <td>
-                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' /></a>
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' /></a>
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
-                </td>
-                <td>
-                    <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
                 </td>
                 <td>
                     <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
@@ -25,19 +29,16 @@
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <tr style="background-color:#008A8C;color: #FFFFFF;">
+            <tr style="background-color: #999999;">
                 <td>
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                 </td>
                 <td>
-                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' /></a>
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' /></a>
                 </td>
                 <td>
                     <asp:TextBox ID="NomeTextBox" runat="server" Text='<%# Bind("Nome") %>' />
-                </td>
-                <td>
-                    <asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' />
                 </td>
                 <td>
                     <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
@@ -57,12 +58,11 @@
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                 </td>
-                <td>&nbsp;</td>
                 <td>
-                    <asp:TextBox ID="NomeTextBox" runat="server" Text='<%# Bind("Nome") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' /></a>
                 </td>
                 <td>
-                    <asp:TextBox ID="TipoTextBox" runat="server" Text='<%# Bind("Tipo") %>' />
+                    <asp:TextBox ID="NomeTextBox" runat="server" Text='<%# Bind("Nome") %>' />
                 </td>
                 <td>
                     <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
@@ -70,15 +70,12 @@
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
-            <tr style="background-color:#DCDCDC;color: #000000;">
+            <tr style="background-color: #E0FFFF;color: #333333;">
                 <td>
-                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' /></a>
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' /></a>
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
-                </td>
-                <td>
-                    <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
                 </td>
                 <td>
                     <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
@@ -90,10 +87,9 @@
                 <tr runat="server">
                     <td runat="server">
                         <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                            <tr runat="server" style="background-color:#DCDCDC;color: #000000;">
-                                <th runat="server">Id</th>
-                                <th runat="server">Nome</th>
-                                <th runat="server">Tipo</th>
+                            <tr runat="server" style="background-color: #E0FFFF;color: #333333;">
+                                <th class="text-center text-uppercase" runat="server">Tipo</th>
+                                <th class="text-center text-uppercase" runat="server">Nome</th>
                             </tr>
                             <tr id="itemPlaceholder" runat="server">
                             </tr>
@@ -101,10 +97,12 @@
                     </td>
                 </tr>
                 <tr runat="server">
-                    <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                    <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
                         <asp:DataPager ID="DataPager1" runat="server">
                             <Fields>
-                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                <asp:NumericPagerField />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                             </Fields>
                         </asp:DataPager>
                     </td>
@@ -112,15 +110,12 @@
             </table>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <tr style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">
+            <tr style="background-color: #E2DED6;font-weight: bold;color: #333333;">
                 <td>
-                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    <a href='DetalheDispositivo.aspx?id=<%# Eval("Id") %>'><asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' /></a>
                 </td>
                 <td>
                     <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
-                </td>
-                <td>
-                    <asp:Label ID="TipoLabel" runat="server" Text='<%# Eval("Tipo") %>' />
                 </td>
                 <td>
                     <a href='AlterarDispositivo.aspx?id=<%# Eval("Id") %>'>Alterar</a>
@@ -128,15 +123,4 @@
             </tr>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTDB %>" SelectCommand="SELECT [Id], [Nome], [Tipo] FROM [Dispositivo] WHERE ([Tipo] = @Tipo)">
-        <SelectParameters>
-            <asp:Parameter DefaultValue="0" Name="Tipo" Type="Int32" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <asp:DataPager ID="lvDataPager1" runat="server" PagedControlID="ListViewSensores" PageSize="3">
-        <Fields>
-            <asp:NumericPagerField ButtonType="Link" />
-        </Fields>
-    </asp:DataPager>
-
 </asp:Content>

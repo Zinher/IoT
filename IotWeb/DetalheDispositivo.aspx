@@ -12,7 +12,7 @@
         </h1>
         <h5><asp:Label ID="LabelResultadoMsg" runat="server" Text="Label"></asp:Label></h5>
         <div class="form-group">
-            <asp:Label ID="Label2" runat="server" Text="Label">Id:</asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Label" CssClass="col-sm-2 control-label">Id:</asp:Label>
             <asp:TextBox ID="TextId" runat="server" ReadOnly="True" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="form-group">
