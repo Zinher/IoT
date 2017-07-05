@@ -16,8 +16,7 @@ namespace IoTWeb
         {
             if (!IsPostBack) {
                 
-                ListViewSensores.DataSource = dispositivoService.obterSensores();
-                ListViewSensores.DataBind();
+                
             }
         }
     }

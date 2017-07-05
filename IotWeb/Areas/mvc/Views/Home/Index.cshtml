@@ -1,0 +1,32 @@
+﻿@model IEnumerable<IoTModel.Dispositivo>
+
+<p>
+    @Html.ActionLink("Novo Dispositivo", "IncluirDispositivo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "AlterarDispositivo", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", "DetalheDispositivo", new { id = item.Id, }) |
+        </td>
+    </tr>
+}
+
+</table>

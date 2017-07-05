@@ -8,13 +8,13 @@
             <small>Listagem de Sensores</small>
         </h1>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTDB %>" SelectCommand="SELECT [Tipo], [Nome] FROM [Dispositivo] WHERE ([Tipo] = @Tipo)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTDB %>" SelectCommand="SELECT [ID], [Tipo], [Nome] FROM [Dispositivo] WHERE ([Tipo] = @Tipo)">
         <SelectParameters>
             <asp:Parameter DefaultValue="0" Name="Tipo" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
 
-    <asp:ListView ID="ListViewSensores" runat="server">
+    <asp:ListView ID="ListViewSensores" runat="server" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
             <tr style="background-color: #FFFFFF;color: #284775;">
                 <td>

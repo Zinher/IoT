@@ -6,6 +6,8 @@ using System.Web.Security;
 using System.Web.SessionState;
 using IoTBLL;
 using IoTModel;
+using System.Web.Mvc;
+
 namespace IoTWeb
 {
     public class Global : System.Web.HttpApplication
@@ -14,7 +16,7 @@ namespace IoTWeb
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            AreaRegistration.RegisterAllAreas(); 
         }
         protected void Session_Start(object sender, EventArgs e)
         {
