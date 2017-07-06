@@ -1,7 +1,16 @@
 ﻿@model IoTModel.Dispositivo
 
 <div>
-    <h4>Dispositivo</h4>
+    @if (ViewBag.Sucesso != null)
+    {
+    <div class="alert alert-success">
+        <strong>@ViewBag.Sucesso</strong>
+    </div>
+    }
+    
+
+    <h4>Detalhes do Dispositivo</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,12 +26,22 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tipo)
+            @{ if (Model.Tipo == 0)
+                {
+                    @Html.DisplayName("Sensor");
+                }
+                else if (Model.Tipo == 1)
+                {
+                    @Html.DisplayName("Atuador");
+                }
+
+            }
+            
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar nome", "AlterarDispositivo", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

@@ -15,7 +15,6 @@ namespace IoTWeb.Areas.mvc.Controllers
         // GET: mvc/Home
         public ActionResult Index()
         {
-            dispositivoService.obterTodos();
             return View(dispositivoService.obterTodos());
         }
 
@@ -29,13 +28,28 @@ namespace IoTWeb.Areas.mvc.Controllers
         [HttpGet]
         public ActionResult IncluirDispositivo()
         {
+            var listaTipo = new SelectList(new[]
+            {
+                new {Id = -1, Name = "Selecione..."},
+                new {Id = 0, Name = "Sensor"},
+                new {Id = 1, Name = "Atuador"}
+            }, "Id", "Name", -1);
+            ViewBag.Tipo = listaTipo;
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult IncluirDispositivo(Dispositivo dispositivo)
         {
+
+            if(dispositivo.Nome == null)
+                {
+                    return View(dispositivo);
+                }
+                
             dispositivoService.incluir(dispositivo);
+            ViewBag.Sucesso = "Dispositivo salvo com sucesso";
             return View("DetalheDispositivo", dispositivo);
         }
 
@@ -50,7 +64,8 @@ namespace IoTWeb.Areas.mvc.Controllers
         public ActionResult AlterarDispositivo(Dispositivo dispositivo)
         {
             dispositivoService.alterarNome(dispositivo.Id, dispositivo.Nome);
-            return View(dispositivo);
+            ViewBag.Sucesso = "Dispositivo ALTERADO com sucesso";
+            return View("DetalheDispositivo", dispositivo);
         }
     }
 }

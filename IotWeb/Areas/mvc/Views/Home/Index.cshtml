@@ -20,10 +20,20 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
+            @{ if(item.Tipo == 0)
+                {
+                    @Html.DisplayName("Sensor");
+                }
+                else if (item.Tipo == 1)
+                {
+                    @Html.DisplayName("Atuador");
+                }
+
+            }
+                
         </td>
         <td>
-            @Html.ActionLink("Editar", "AlterarDispositivo", new { id=item.Id }) |
+            @Html.ActionLink("Alterar nome", "AlterarDispositivo", new { id=item.Id }) |
             @Html.ActionLink("Detalhes", "DetalheDispositivo", new { id = item.Id, }) |
         </td>
     </tr>

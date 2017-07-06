@@ -16,8 +16,8 @@ namespace IoTModel
 
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage ="Preencha o campo nome")]
+        [StringLength(50, ErrorMessage = "Preencher dispositivo")]
         public string Nome { get; set; }
 
         public int Tipo { get; set; }
