@@ -43,11 +43,19 @@ namespace IoTWeb.Areas.mvc.Controllers
         public ActionResult IncluirDispositivo(Dispositivo dispositivo)
         {
 
-            if(dispositivo.Nome == null)
+            if (dispositivo.Nome == null)
+            {
+                var listaTipo = new SelectList(new[]
                 {
-                    return View(dispositivo);
-                }
-                
+                    new {Id = -1, Name = "Selecione..."},
+                    new {Id = 0, Name = "Sensor"},
+                    new {Id = 1, Name = "Atuador"}
+                }, "Id", "Name", -1);
+
+                ViewBag.Tipo = listaTipo;
+                return View(dispositivo);
+            }
+
             dispositivoService.incluir(dispositivo);
             ViewBag.Sucesso = "Dispositivo salvo com sucesso";
             return View("DetalheDispositivo", dispositivo);
